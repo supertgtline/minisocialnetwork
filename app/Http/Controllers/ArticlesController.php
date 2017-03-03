@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Articles;
+
+use Auth;
+
 class ArticlesController extends Controller
 {
     /**
@@ -35,7 +39,11 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+        $articles = new Articles;
+        $articles->user_id = Auth::user()->id;
+        $articles->content = $request->content;
+        $articles->live = (boolean)$request->live;
+        $articles->post_on = $request->post_on;
     }
 
     /**
