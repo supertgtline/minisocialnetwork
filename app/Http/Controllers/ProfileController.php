@@ -8,7 +8,8 @@ use App\User;
 class ProfileController extends Controller
 {
     public function profile($username){
-    	$user = User::whereUsername($username)->first();
-    	return $user;
+    	$user = User::whereusername($username)->first();
+    	
+    	return view('user.profile',compact('user'));
     }
 }
