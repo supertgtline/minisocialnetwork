@@ -39,11 +39,14 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        $articles = new Articles;
+
+        /*$articles = new Articles;
         $articles->user_id = Auth::user()->id;
         $articles->content = $request->content;
         $articles->live = (boolean)$request->live;
         $articles->post_on = $request->post_on;
+        $articles->save();*/
+        Articles::create($request->all());
     }
 
     /**
