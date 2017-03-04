@@ -16,6 +16,7 @@
 				<textarea name="content" class="form-control"></textarea>
 
 			</div>
+			<input type="hidden" name="user_id" value="{{Auth::user()->id}}">
 			<div class="checkbox">
 				<label>
 					<input type="checkbox" name="live">
