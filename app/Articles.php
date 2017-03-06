@@ -8,7 +8,7 @@ class Articles extends Model
 {
    // protected $table='articles';
    protected $fillable = [
-   'user_id','live','content','post_on'
+   'user_id','content','Live','post_on'
 
    ];
    public function setLiveAttribute($value){

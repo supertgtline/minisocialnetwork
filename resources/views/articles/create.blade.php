@@ -10,6 +10,7 @@
 			</div>
 			<div class="panel-body">
 			<form action="/articles" method="POST">
+			<input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
 			{{csrf_field()}}
 				<div class="form-group">
 				<label for="content">Content</label>

@@ -8,6 +8,8 @@ use App\Articles;
 
 use Auth;
 
+use DB;
+
 class ArticlesController extends Controller
 {
     /**
@@ -17,7 +19,8 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Articles::paginate(10);
+        return view('articles.index',compact('articles'));
     }
 
     /**
@@ -47,6 +50,7 @@ class ArticlesController extends Controller
         $articles->post_on = $request->post_on;
         $articles->save();*/
         Articles::create($request->all());
+        //DB::table('articles')->insert($request->except('_token'));
     }
 
     /**
