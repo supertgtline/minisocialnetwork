@@ -61,7 +61,8 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        //
+        $articles =Articles::findOrFail($id);
+        return view('articles.show',compact('articles'));
     }
 
     /**

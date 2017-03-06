@@ -12,7 +12,8 @@
             </div>
             <div class="panel-body">
 
-            {{$article['content']}}
+            {{ $article->shortContent}}
+            <a href="/articles/{{$article->id}}">Read more</a>
             </div>
             <div class="panel-footer clearfix">
                 <i class="fa fa-heart pull-right"></i>

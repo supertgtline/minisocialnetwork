@@ -14,4 +14,7 @@ class Articles extends Model
    public function setLiveAttribute($value){
    	$this->attributes['Live'] = (boolean)($value);
    }
+   public function getShortContentAttribute($value){
+   	return substr($this->content,0,random_int(0,100)).'...';
+   }
 }
