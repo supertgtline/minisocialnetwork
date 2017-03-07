@@ -15,20 +15,20 @@
 			{{csrf_field()}}
 				<div class="form-group">
 				<label for="content">Content</label>
-				<textarea name="content" class="form-control"></textarea>
+				<textarea name="content" class="form-control">{{$articles->content}}</textarea>
 
 			</div>
 			<input type="hidden" name="user_id" value="{{Auth::user()->id}}">
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" name="live">
+					<input type="checkbox" name="live" {{$articles->live == 1 ? 'checked' :''}}>
 					Live
 				</label>
 
 			</div>
 			<div class="form-group">
 				<label for="post_on">Post on</label>
-				<input type="datetime-local" name="post_on" class="form-control">
+				<input type="datetime-local" name="post_on" class="form-control" value="{{$articles->post_on->format('Y-m-d\TH:i:s')}}">
 			</div>
 				<input class="btn btn-success pull-right" type="submit" name="Submit">
 			</form>

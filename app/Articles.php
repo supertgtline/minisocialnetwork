@@ -11,6 +11,7 @@ class Articles extends Model
    'user_id','content','Live','post_on'
 
    ];
+   protected $dates = ['post_on'];
    public function setLiveAttribute($value){
    	$this->attributes['Live'] = (boolean)($value);
    }
