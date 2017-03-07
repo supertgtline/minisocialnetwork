@@ -7,6 +7,9 @@
 		<div class="panel panel-default">
 			<div class="panel-heading default">
 			Article by Renato Hysa
+			<small>
+				<a href="/articles/{{$articles->id}}/edit">Edit</a>
+			</small>
 			<span class="pull-right">
 				{{$articles->created_at->diffForHumans()}}
 			</span>
